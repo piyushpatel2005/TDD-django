@@ -52,3 +52,5 @@ Then, run: `python manage.py startapp lists`. It will create `lists` directory w
 To run tests, use `manage.py` again. 
 
 `python manage.py test` will run all tests.
+
+To start the app, use `python manage.py runserver`.
