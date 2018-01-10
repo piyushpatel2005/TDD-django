@@ -54,3 +54,5 @@ To run tests, use `manage.py` again.
 `python manage.py test` will run all tests.
 
 To start the app, use `python manage.py runserver`.
+
+Now, tests are written on classes inheriting from TestCase class from Django. For those tests where you do not want to interfere the production database, we can use LiveServerTestCase class. This is run using `manage.py` script.
