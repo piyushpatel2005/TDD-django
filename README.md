@@ -41,4 +41,14 @@ Let's install them. Start virtualenv and then type:
 
 `pip install "django<1.12" "selenium<4"`
 
+Go to convenient location and start the project using:
 
+`django-admin.py startproject superlists`
+
+Now, in Django, projects are divided into apps and to create it, go inside superlists directory and find `manage.py` script.
+
+Then, run: `python manage.py startapp lists`. It will create `lists` directory with different files. This is general structure of app. Here, `tests.py` will automatically run.
+
+To run tests, use `manage.py` again. 
+
+`python manage.py test` will run all tests.
