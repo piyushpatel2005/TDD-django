@@ -56,3 +56,11 @@ To run tests, use `manage.py` again.
 To start the app, use `python manage.py runserver`.
 
 Now, tests are written on classes inheriting from TestCase class from Django. For those tests where you do not want to interfere the production database, we can use LiveServerTestCase class. This is run using `manage.py` script.
+
+To run only unit tests for *lists*, use:
+
+`python manage.py test lists`
+
+We can upgrade installed modules using:
+
+`pip install --upgrade selenium`
