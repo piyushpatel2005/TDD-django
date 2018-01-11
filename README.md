@@ -64,3 +64,5 @@ To run only unit tests for *lists*, use:
 We can upgrade installed modules using:
 
 `pip install --upgrade selenium`
+
+To setup a relationship between two models, we can use foreign key constraint. This way one model can contain another model. For reverse lookup, we can use `item_set.all` to retrieve all items from a list.
