@@ -66,3 +66,9 @@ We can upgrade installed modules using:
 `pip install --upgrade selenium`
 
 To setup a relationship between two models, we can use foreign key constraint. This way one model can contain another model. For reverse lookup, we can use `item_set.all` to retrieve all items from a list.
+
+For setting static files, we can set STATIC_ROOT constant in project settings and then apply following command.
+
+    `python manage.py collectstatic`
+
+This will copy all static files from the apps and move them into `../static/` directory.
