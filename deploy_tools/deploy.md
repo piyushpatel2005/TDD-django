@@ -238,16 +238,16 @@ Now, the website is working again.
 
 Create this file in `/etc/systemd/system/gunicorn-staging.piyushpatel.tk.service`. Systemd scripts live in `/etc/systemd/system` directory and their names end with `.service`
 
-You might need to change permission for this file.
+You might need to change permission for this file. I assume my username on server is `USERNAME`
 
 ```
 Description=Gunicorn server for staging.piyushpatel.tk
 
 [Service]
 Restart=on-failure
-User=piyushpatel2005
-WorkingDirectory=/home/piyushpatel2005/sites/staging.piyushpatel.tk/source
-ExecStart=/home/piyushpatel2005/sites/staging.piyushpatel.tk/virtualenv/bin/gunicorn \
+User=USERNAME
+WorkingDirectory=/home/USERNAME/sites/staging.piyushpatel.tk/source
+ExecStart=/home/USERNAME/sites/staging.piyushpatel.tk/virtualenv/bin/gunicorn \
 --bind unix:/tmp/staging.piyushpatel.tk.socket superlists.wsgi:application
 
 [Install]
@@ -267,3 +267,11 @@ Check systemd logs for this service using `sudo journalctl -u gunicorn-staging.p
 
 If you change systemd config file, make sure use `systemctl daemon-reload` and then `systemctl restart`
 
+## Deploy your live site:
+
+```shell
+SITENAME=staging.piyushpatel.tk
+
+sed "s/SITENAME/live.piyushpatel.tk/g" source/deploy_tools/nginx.template.conf | sudo tee /etc/nginx/sites-available/live.piyushpatel.tk
+
+sed "s/SITENAME/live.piyushpatel.tk/g" source/deploy_tools/gunicorn-systemd.template.service | sudo tee /etc/systemd/system/gunicorn-live.piyushpatel.tk.service
