@@ -2,7 +2,7 @@ from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run
 import random
 
-REPO_URL = 'REPLACE YOUR .git REPO URL'
+REPO_URL = 'https://github.com/piyushpatel2005/TDD-django.git'
 
 def deploy():
     site_folder = f'/home/{env.user}/sites/{env.host}'
