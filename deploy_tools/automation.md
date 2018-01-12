@@ -36,3 +36,16 @@ We use fabric command `run` to run shell commands on the server. Check complete 
 - fabric `local` command is used to run commands on your local machine.
 
 - fabric `sed` command does a string substitution in a file (change DEBUG=False from DEBUG=True)
+
+Afeter creating `fabfile.py` from local repo type:
+
+```shell
+cd deploy_tools
+fab deploy:host=YOUR_USERNAME@staging.piyushpatel.tk
+```
+
+This should finish successfully with different logging. Make sure that your remote repository is in sync with local repository and then run this command.
+
+Deploy live site as well like this.
+
+`fab deploy:host=YOUR_USERNAME@live.piyushpatel.tk`
