@@ -49,3 +49,17 @@ This should finish successfully with different logging. Make sure that your remo
 Deploy live site as well like this.
 
 `fab deploy:host=YOUR_USERNAME@live.piyushpatel.tk`
+
+Once deployed, add proper git tags to make it easy to track changes.
+
+```shell
+git tag LIVE
+export TAG=$(date +DEPLOYED-%F/%H%M)
+echo $TAG
+git tag $TAG
+git push origin LIVE $TAG
+
+git log --graph --oneline --decorate
+```
+
+Visit [http://live.piyushpatel.tk](http://live.piyushpatel.tk)
